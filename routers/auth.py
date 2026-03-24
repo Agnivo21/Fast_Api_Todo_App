@@ -10,6 +10,7 @@ from datetime import timedelta,datetime,timezone
 from starlette import status
 from jose import jwt,JWTError
 from fastapi.templating import Jinja2Templates
+from main import templates
 
 router = APIRouter(
     prefix="/auth",
@@ -78,7 +79,7 @@ async def get_current_user(token:Annotated[str,Depends(oauth2_bearer)]):
 
 
 
-templates=Jinja2Templates(directory="templates")
+
 
 ###templates####
 

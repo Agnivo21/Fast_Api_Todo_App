@@ -4,6 +4,11 @@ from database import engine
 from routers import auth,todos,admin,user
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import RedirectResponse 
+from fastapi.templating import Jinja2Templates
+
+templates = Jinja2Templates(directory="templates")
+
+
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
