@@ -9,8 +9,7 @@ from fastapi.security.oauth2 import OAuth2PasswordRequestForm,OAuth2PasswordBear
 from datetime import timedelta,datetime,timezone
 from starlette import status
 from jose import jwt,JWTError
-from fastapi.templating import Jinja2Templates
-from main import templates
+from config import templates_jinja
 
 router = APIRouter(
     prefix="/auth",
@@ -85,11 +84,11 @@ async def get_current_user(token:Annotated[str,Depends(oauth2_bearer)]):
 
 @router.get("/login-page")
 def render_login_page(request:Request):
-    return templates.TemplateResponse("login.html",{"request":request})
+    return templates_jinja.TemplateResponse("login.html",{"request":request})
 
 @router.get("/register-page")
 def render_register_page(request:Request):
-    return templates.TemplateResponse("register.html",{"request":request})
+    return templates_jinja.TemplateResponse("register.html",{"request":request})
 
 ####endpoints#####
 @router.post("/")
