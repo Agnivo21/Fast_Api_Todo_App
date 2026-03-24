@@ -10,7 +10,7 @@ Base.metadata.create_all(bind=engine)
 
 
 
-app.mount('/static',StaticFiles(directory="project3todo/static"),name="static")
+app.mount('/static',StaticFiles(directory="static"),name="static")
 
 
 

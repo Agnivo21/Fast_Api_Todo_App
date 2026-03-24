@@ -78,7 +78,7 @@ async def get_current_user(token:Annotated[str,Depends(oauth2_bearer)]):
 
 
 
-templates=Jinja2Templates(directory="project3todo/templates")
+templates=Jinja2Templates(directory="templates")
 
 ###templates####
 
