@@ -4,7 +4,7 @@ from database import SessionLocal
 from typing import Annotated
 from pydantic import BaseModel,Field
 from sqlalchemy.orm import session
-from auth import get_current_user
+from routers.auth import get_current_user
 from starlette.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 
