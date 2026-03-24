@@ -1,7 +1,7 @@
 from fastapi import FastAPI,Request,status
-from .models import Base
-from .database import engine
-from .routers import auth,todos,admin,user
+from models import Base
+from database import engine
+from routers import auth,todos,admin,user
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import RedirectResponse 
 app = FastAPI()
