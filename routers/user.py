@@ -3,7 +3,7 @@ from models import Users
 from database import SessionLocal
 from typing import Annotated
 from pydantic import BaseModel,Field
-from sqlalchemy.orm import session
+from sqlalchemy.orm import Session
 from routers.auth import get_current_user,bcrypt_context
 
 
@@ -18,7 +18,7 @@ def get_db():
     finally:
         db.close()
 
-db_dependency = Annotated[session,Depends(get_db)]
+db_dependency = Annotated[Session,Depends(get_db)]
 user_dependency = Annotated[dict,Depends(get_current_user)]
 
 class UserVerification(BaseModel):

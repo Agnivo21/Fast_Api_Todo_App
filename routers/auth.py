@@ -4,7 +4,7 @@ from typing import Annotated
 from models import Users
 from passlib.context import CryptContext
 from database import SessionLocal
-from sqlalchemy.orm import session
+from sqlalchemy.orm import Session
 from fastapi.security.oauth2 import OAuth2PasswordRequestForm,OAuth2PasswordBearer
 from datetime import timedelta,datetime,timezone
 from starlette import status
@@ -45,7 +45,7 @@ def get_db():
     finally:
         db.close()
 
-db_dependency=Annotated[session,Depends(get_db)]
+db_dependency=Annotated[Session,Depends(get_db)]
 
 def authenticate_user(username,password,db):
     user = db.query(Users).filter(username==Users.username).first()
