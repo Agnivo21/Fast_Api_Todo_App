@@ -3,13 +3,14 @@ cryptography
 fastapi==0.104.1
 psycopg2-binary
 PyMySQL
-python-jose
+python-jose[cryptography]
 python-multipart
 SQLAlchemy==2.0.23
 uvicorn==0.24.0
-passlib
+passlib[bcrypt]
 pytest
 httpx
 pytest-asyncio
 aiofiles
 jinja2
+pydantic==2.5.0
