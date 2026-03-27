@@ -1,12 +1,12 @@
 bcrypt==4.0.1
 cryptography
-fastapi
+fastapi==0.104.1
 psycopg2-binary
 PyMySQL
 python-jose
 python-multipart
-SQLAlchemy
-uvicorn
+SQLAlchemy==2.0.23
+uvicorn==0.24.0
 passlib
 pytest
 httpx
